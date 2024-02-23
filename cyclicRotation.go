@@ -40,7 +40,7 @@ package main
 // each element of array A is an integer within the range [−1,000..1,000].
 
 func CyclicRotation(A []int, K int) []int {
-	result := []int{}
+	var result []int
 
 	if K <= 0 || len(A) <= 0 {
 		return A
