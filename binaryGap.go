@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -28,16 +27,12 @@ import (
 
 // N is an integer within the range [1..2,147,483,647].
 
-func main() {
-	fmt.Println(BinaryGap(561892))
-}
-
 func BinaryGap(N int) int {
 	binaryN := strconv.FormatInt(int64(N), 2)
 	gap := 0
 	count := 0
 	start := false
-	fmt.Println("binary: ", binaryN)
+
 	for _, d := range binaryN {
 		if start && string(d) == "0" {
 			count++
