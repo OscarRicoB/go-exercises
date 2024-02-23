@@ -23,7 +23,7 @@ func TestCoinChange(t *testing.T) {
 		if slices.Compare(result, test.expected) != 0 {
 			t.Errorf("CoinChange(%v, %v) returned %v but expected %v", test.input1, test.input2, result, test.expected)
 		} else {
-			t.Logf("CoinChange(%v, %v) = returned %v", test.input1, test.input2, result)
+			t.Logf("CoinChange(%v, %v) returned %v", test.input1, test.input2, result)
 		}
 
 	}

@@ -14,7 +14,9 @@ func TestPermMissingElem(t *testing.T) {
 	for _, test := range tests {
 		result := PermMissingElem(test.input)
 		if result != test.expected {
-			t.Errorf("FrogJmp(%v) = %v, expected %v", test.input, result, test.expected)
+			t.Errorf("PermMissingElem(%v) returned %v but expected %v", test.input, result, test.expected)
+		} else {
+			t.Logf("PermMissingElem(%v) returned %v", test.input, result)
 		}
 	}
 

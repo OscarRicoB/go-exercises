@@ -16,7 +16,9 @@ func TestFrogJmp(t *testing.T) {
 	for _, test := range tests {
 		result := FrogJmp(test.input1, test.input2, test.input3)
 		if result != test.expected {
-			t.Errorf("FrogJmp(%v, %v, %v) = %v, expected %v", test.input1, test.input2, test.input3, result, test.expected)
+			t.Errorf("FrogJmp(%v, %v, %v) returned %v but expected %v", test.input1, test.input2, test.input3, result, test.expected)
+		} else {
+			t.Logf("FrogJmp(%v, %v, %v) returned %v", test.input1, test.input2, test.input3, result)
 		}
 	}
 }

@@ -18,7 +18,9 @@ func TestCyclicRotation(t *testing.T) {
 	for _, test := range tests {
 		result := CyclicRotation(test.input, test.rotation)
 		if slices.Compare(result, test.expected) != 0 {
-			t.Errorf("CyclicRotation(%v, %v) = %v, expected %v", test.input, test.rotation, result, test.expected)
+			t.Errorf("CyclicRotation(%v, %v) returned %v but expected %v", test.input, test.rotation, result, test.expected)
+		} else {
+			t.Logf("CyclicRotation(%v, %v) returned %v", test.input, test.rotation, result)
 		}
 	}
 }

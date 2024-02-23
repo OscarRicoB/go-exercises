@@ -19,7 +19,9 @@ func TestBinaryGap(t *testing.T) {
 	for _, test := range tests {
 		result := BinaryGap(test.input)
 		if result != test.expected {
-			t.Errorf("BinaryGap(%v) = %v, expected %v", test.input, result, test.expected)
+			t.Errorf("BinaryGap(%v) returned %v but expected %v", test.input, result, test.expected)
+		} else {
+			t.Logf("BinaryGap(%v) returned %v", test.input, result)
 		}
 	}
 }

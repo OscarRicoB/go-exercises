@@ -17,7 +17,9 @@ func TestFrogRiverOne(t *testing.T) {
 	for _, test := range tests {
 		result := FrogRiverOne(test.input1, test.input2)
 		if result != test.expected {
-			t.Errorf("FrogRiverOne(%v, %v) = %v, expected %v", test.input1, test.input2, result, test.expected)
+			t.Errorf("FrogRiverOne(%v, %v) returned %v but expected %v", test.input1, test.input2, result, test.expected)
+		} else {
+			t.Logf("FrogRiverOne(%v, %v) returned %v", test.input1, test.input2, result)
 		}
 	}
 }
