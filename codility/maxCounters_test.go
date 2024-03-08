@@ -23,4 +23,13 @@ func TestMaxCounters(t *testing.T) {
 			t.Logf("MaxCounters(%v, %v) returned %v", test.input1, test.input2, result)
 		}
 	}
+
+	for _, test := range tests {
+		result := MaxCountersBetterPerformance(test.input1, test.input2)
+		if slices.Compare(result, test.expected) != 0 {
+			t.Errorf("MaxCountersBetterPerformance(%v, %v) returned %v but expected %v", test.input1, test.input2, result, test.expected)
+		} else {
+			t.Logf("MaxCountersBetterPerformance(%v, %v) returned %v", test.input1, test.input2, result)
+		}
+	}
 }
