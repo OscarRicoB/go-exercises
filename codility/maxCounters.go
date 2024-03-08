@@ -76,3 +76,26 @@ func newCounter(N, C int) []int {
 	}
 	return counters
 }
+
+func MaxCountersBetterPerformance(N int, A []int) []int {
+	cs := make([]int, N, N)
+	cMax := 0
+	aMax := 0
+	for _, a := range A {
+
+		if a > N {
+			aMax = cMax
+			cs = make([]int, N, N)
+		} else {
+			cs[a-1]++
+		}
+
+		if a <= N && aMax+cs[a-1] > cMax {
+			cMax = aMax + cs[a-1]
+		}
+	}
+	for i, v := range cs {
+		cs[i] = v + aMax
+	}
+	return cs
+}
